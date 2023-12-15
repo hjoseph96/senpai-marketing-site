@@ -1,4 +1,4 @@
-# Senpai LP
+# Senpai Marketing Site
 
 ```sh
 npm create astro@latest -- --template basics
