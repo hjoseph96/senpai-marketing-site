@@ -1,0 +1,13 @@
+.menu-top-bar-menu {
+    .menu-item {
+        display: inline-block;
+        & > a {
+            display: flex;
+            align-items: center;
+            padding-right: 36px;
+            & > span {
+                padding-left: 8px;
+            }
+        }
+    }
+}
