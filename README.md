@@ -1,5 +1,8 @@
 # Senpai Marketing Site
 
+## Installation
+- Copy .env.sample and create .env file. Fill mailchimp api key and list id
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
