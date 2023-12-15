@@ -37,7 +37,7 @@ export default {
 		},
 	},
 	plugins: [
-		plugin(function ({addComponents, addUtilities}) {
+		plugin(function ({addComponents}) {
       addComponents({
         '.h1': {
             '@apply font-geomanist sm:text-7xl text-5xl': {}

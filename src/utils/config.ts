@@ -10,6 +10,7 @@ export interface SiteConfig {
   base?: string;
   trailingSlash?: boolean;
   googleSiteVerificationId?: string;
+  launchDate: string;
 }
 export interface MetaDataConfig extends Omit<MetaData, 'title'> {
   title?: {
@@ -78,7 +79,7 @@ const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
   analytics?: unknown;
 };
 
-const DEFAULT_SITE_NAME = 'Website';
+const DEFAULT_SITE_NAME = 'Senpai';
 
 const getSite = () => {
   const _default = {
@@ -88,6 +89,7 @@ const getSite = () => {
     trailingSlash: false,
 
     googleSiteVerificationId: '',
+    launchDate: '',
   };
 
   return merge({}, _default, config?.site ?? {}) as SiteConfig;

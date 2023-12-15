@@ -5,6 +5,7 @@ site:
   trailingSlash: false
 
   googleSiteVerificationId: 
+  launchDate: "02/01/2024"
 
 # Default SEO metadata
 metadata:

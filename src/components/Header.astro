@@ -6,6 +6,8 @@ import WifesMobile from '~/components/wifes/WifesMobile.astro';
 import { MailChimp } from '~/utils/mailchimp';
 
 import LogoPng from "~/assets/images/logo.png";
+import { SITE } from '~/utils/config';
+import { calculateLaunchDate } from '~/utils/utils';
 
 const errors = { email: "" };
 let success = false;
@@ -20,10 +22,13 @@ if (Astro.request.method === "POST") {
 
     const hasErrors = Object.values(errors).some(msg => msg)
     if (!hasErrors) {
-        const ret = await MailChimp.subscribe(email as string);
+        await MailChimp.subscribe(email as string);
         success = true;
     }
 }
+
+let launchDate = new Date(SITE.launchDate);
+const { months, days, hours } = calculateLaunchDate(launchDate);
 ---
 
 <div class="header">
@@ -43,15 +48,15 @@ if (Astro.request.method === "POST") {
 						<div class="h1 font-bold mt-2">your waifu</div>
 						<div class="flex items-center justify-between mt-12">
 							<div class="timer-container w-[110px] py-6 px-2 sm:w-[160px] sm:p-[16px]">
-								<div class="txt-extra">01</div>
+								<div class="txt-extra">{months}</div>
 								<div class="title2 sm:mt-6 mt-2">MONTH</div>
 							</div>
 							<div class="timer-container w-[110px] py-6 px-2 sm:w-[160px] sm:p-[16px]">
-								<div class="txt-extra">08</div>
+								<div class="txt-extra">{days}</div>
 								<div class="title2 sm:mt-6 mt-2">DAYS</div>
 							</div>
 							<div class="timer-container w-[110px] py-6 px-2 sm:w-[160px] sm:p-[16px]">
-								<div class="txt-extra">15</div>
+								<div class="txt-extra">{hours}</div>
 								<div class="title2 sm:mt-6 mt-2">HOURS</div>
 							</div>
 						</div>

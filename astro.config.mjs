@@ -5,6 +5,7 @@ import { defineConfig } from 'astro/config';
 
 import tailwind from "@astrojs/tailwind";
 import { SITE } from './src/utils/config.ts';
+import netlify from '@astrojs/netlify/functions';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -15,6 +16,7 @@ export default defineConfig({
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 
   output: 'server',
+  adapter: netlify(),
   
   integrations: [tailwind()],
 
