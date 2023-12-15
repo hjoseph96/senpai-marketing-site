@@ -1,0 +1,39 @@
+---
+import Image from '~/components/common/Image.astro';
+
+import YoutubeIcon from "~/assets/images/youtube.svg";
+import InstagramIcon from "~/assets/images/instagram.svg";
+import TwitterIcon from "~/assets/images/twitter.svg";
+import TikTokIcon from "~/assets/images/tiktok.svg";
+---
+
+<div class="footer text-center p-8">
+	<div class="caption2 text-neutral-200">© 2023 Makeshift Software Inc. All Rights Reserved</div>
+	<div class="social-icons flex items-center gap-1 mt-4 justify-center">
+		<a href="https://youtube.com">
+			<Image src={YoutubeIcon} alt="youtube" width={40} class="h-[40px]" />
+		</a>
+		<a href="https://instagram.com">
+			<Image src={InstagramIcon} alt="youtube" width={40} class="h-[40px]" />
+		</a>
+		<a href="https://twiiter.com">
+			<Image src={TwitterIcon} alt="youtube" width={40} class="h-[40px]" />
+		</a>
+		<a href="https://tiktok.com">
+			<Image src={TikTokIcon} alt="youtube" width={40} class="h-[40px]" />
+		</a>
+	</div>
+	<img src="/assets/images/footer-gradient.png" alt="footer-bg" class="footer-bg">
+</div>
+
+<style>
+	.footer {
+		position: relative;
+
+		.footer-bg {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+</style>

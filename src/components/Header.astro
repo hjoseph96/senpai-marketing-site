@@ -1,0 +1,121 @@
+---
+import Image from '~/components/common/Image.astro';
+import WifesLeft from '~/components/wifes/WifesLeft.astro';
+import WifesRight from '~/components/wifes/WifesRight.astro';
+import WifesMobile from '~/components/wifes/WifesMobile.astro';
+import { MailChimp } from '~/utils/mailchimp';
+
+import LogoPng from "~/assets/images/logo.png";
+
+const errors = { email: "" };
+let success = false;
+
+if (Astro.request.method === "POST") {
+    const data = await Astro.request.formData();
+    const email = data.get("email");
+
+    if (typeof email !== "string" || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+        errors.email += "Email is not valid. ";
+    } 
+
+    const hasErrors = Object.values(errors).some(msg => msg)
+    if (!hasErrors) {
+        const ret = await MailChimp.subscribe(email as string);
+        success = true;
+    }
+}
+---
+
+<div class="header">
+	<div class="header-bg-pink absolute sm:top-[400px] sm:left-[400px] top-[300px] left-[100px]"></div>
+	<div class="header-bg-blue absolute sm:top-[400px] sm:left-[400px] top-[300px] left-[100px]"></div>
+
+	<div class="content h-full flex flex-col w-full">
+		<div class="sm:ml-24 sm:mt-24 mx-auto mt-10">
+			<Image src={LogoPng} alt="logo" width={152} />        
+		</div>
+		<div class="flex flex-grow sm:flex-row flex-col justify-between w-full">
+			<WifesLeft />
+			<div class="w-full relative">
+				<div class="absolute left-0 w-full text-center mt-4 z-50">
+					<div class="max-w-[528px] mx-auto flex-col p-4 sm:p-0">
+						<div class="h1">Find</div>
+						<div class="h1 font-bold mt-2">your waifu</div>
+						<div class="flex items-center justify-between mt-12">
+							<div class="timer-container w-[110px] py-6 px-2 sm:w-[160px] sm:p-[16px]">
+								<div class="txt-extra">01</div>
+								<div class="title2 sm:mt-6 mt-2">MONTH</div>
+							</div>
+							<div class="timer-container w-[110px] py-6 px-2 sm:w-[160px] sm:p-[16px]">
+								<div class="txt-extra">08</div>
+								<div class="title2 sm:mt-6 mt-2">DAYS</div>
+							</div>
+							<div class="timer-container w-[110px] py-6 px-2 sm:w-[160px] sm:p-[16px]">
+								<div class="txt-extra">15</div>
+								<div class="title2 sm:mt-6 mt-2">HOURS</div>
+							</div>
+						</div>
+						<form action="/" method="POST" class="sm:mt-16 mt-12 mx-auto flex flex-col w-full">
+							<input id="email" name="email" type="text" placeholder="Email address" class="text-input txt-input" />
+							<button class="action-btn btn-caption mt-6">Join the waitlist</button>
+							{errors.email && <p class="error mt-4">{errors.email}</p>}
+							{success && <p class="success mt-4">Successfully joined in waitlist</p>}
+						</form>
+					</div>
+					
+				</div>
+			</div>
+			<WifesRight />
+			<WifesMobile />
+		</div>
+	</div>
+</div>
+
+
+<style>
+	.header {
+		position: relative;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+		position: relative;
+		height: 885px;
+		overflow: hidden;
+
+		.logo {
+			margin: 64px 0 0 64px;
+		}
+
+        .header-bg-pink {
+			width: 1136.422px;
+			height: 951.387px;
+			transform: rotate(-38.088deg);
+			flex-shrink: 0;
+			border-radius: 1136.422px;
+			background: rgba(222, 11, 201, 0.30);
+			filter: blur(110px);
+			animation: bg-circle-pink 6s linear infinite;
+        }
+
+		.header-bg-blue {
+			width: 1136.422px;
+			height: 951.387px;
+			transform: rotate(-38.088deg);
+			flex-shrink: 0;
+			border-radius: 1136.422px;
+			background: rgba(18, 134, 240, 0.30);
+			filter: blur(110px);
+			animation: bg-circle-blue 6s linear infinite;
+        }
+        
+        .content {
+            position: absolute;
+            top: 0;
+
+			.timer-container {
+				border-radius: 16px;
+				background: #1A1D28;
+			}
+		
+        }
+    }
+</style>

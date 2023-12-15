@@ -1,0 +1,17 @@
+---
+import Image from '~/components/common/Image.astro';
+import Step from '~/components/Step.astro';
+import LinePng from "~/assets/images/line.png";
+---
+
+<div class="how-it-works">
+    <div class="container text-center sm:p-24 px-4 py-20">
+        <div class="h2">How it Works</div>
+        <div class="sm:mt-6 mt-4">
+            <Image src={LinePng} alt="line" width={157} class="mx-auto">    
+        </div>
+        <div class="steps mt-10">
+            <Step />
+        </div>
+    </div>
+</div>
