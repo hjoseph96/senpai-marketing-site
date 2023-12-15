@@ -5,7 +5,6 @@ import WifesRight from '~/components/wifes/WifesRight.astro';
 import WifesMobile from '~/components/wifes/WifesMobile.astro';
 import { MailChimp } from '~/utils/mailchimp';
 
-import LogoPng from '~/assets/images/logo.png';
 import { SITE } from '~/utils/config';
 import { calculateLaunchDate } from '~/utils/utils';
 
@@ -38,7 +37,7 @@ let launched = months == days && days == hours && hours == 0;
 
   <div class="content h-full flex flex-col w-full">
     <div class="sm:ml-24 sm:mt-24 mx-auto mt-10">
-      <Image src={LogoPng} alt="logo" width={152} />
+      <Image src='~/assets/images/logo.png' alt="logo" width={152} />
     </div>
     <div class="flex flex-grow sm:flex-row flex-col justify-between w-full">
       <WifesLeft />

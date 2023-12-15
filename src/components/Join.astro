@@ -1,6 +1,5 @@
 ---
 import Image from '~/components/common/Image.astro';
-import LinePng from '~/assets/images/line.png';
 import { SITE } from '~/utils/config';
 import { calculateLaunchDate } from '~/utils/utils';
 
@@ -18,7 +17,7 @@ let launched = months == days && days == hours && hours == 0;
       <div class="container text-center sm:p-20 px-4 py-20 content">
         <div class="h2">Download Now</div>
         <div class="sm:mt-4 mt-2">
-          <Image src={LinePng} alt="line" width={157} class="mx-auto" />
+          <Image src='~/assets/images/line.png' alt="line" width={157} class="mx-auto" />
         </div>
         <div class="flex items-center gap-8 mt-8 justify-center flex-wrap">
           <img src="/assets/images/appstore.png" alt="appstore" />
@@ -35,7 +34,7 @@ let launched = months == days && days == hours && hours == 0;
       <div class="container text-center sm:p-24 px-4 py-20 content">
         <div class="h2">Join the Waitlist</div>
         <div class="sm:mt-4 mt-2">
-          <Image src={LinePng} alt="line" width={157} class="mx-auto" />
+          <Image src='~/assets/images/line.png' alt="line" width={157} class="mx-auto" />
         </div>
         <form action="/" method="POST" class="mt-16 max-w-[528px] mx-auto flex flex-col">
           <input
