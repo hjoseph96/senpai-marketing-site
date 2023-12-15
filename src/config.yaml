@@ -4,15 +4,15 @@ site:
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: 
-  launchDate: "02/01/2024"
+  googleSiteVerificationId:
+  launchDate: '02/01/2024'
 
 # Default SEO metadata
 metadata:
   title:
     default: Senpai
     template: '%s — Senpai'
-  description: "Senpai LP"
+  description: 'Senpai LP'
   robots:
     index: true
     follow: true
