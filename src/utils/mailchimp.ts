@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_KEY = '8d6a6c75e442ef0ecc921328bb5ba163-us21';
-const mcListId = 'e941f9198b';
+const API_KEY = import.meta.env.PUBLIC_MAILCHIMP_API_KEY;
+const mcListId = import.meta.env.PUBLIC_LIST_ID;
 
 export class MailChimp {
   static async subscribe(email: string) {
