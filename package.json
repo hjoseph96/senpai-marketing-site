@@ -17,6 +17,7 @@
     "astro": "^4.0.4",
     "axios": "^1.6.2",
     "lodash.merge": "^4.6.2",
+    "sharp": "^0.33.0",
     "unpic": "^3.16.0"
   },
   "devDependencies": {
