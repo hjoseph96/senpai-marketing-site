@@ -1,0 +1,35 @@
+{
+  "site": {
+    "name": "Senpai",
+    "site": "https://senpai.com",
+    "base": "/",
+    "trailingSlash": false,
+    "googleSiteVerificationId": "",
+    "launchDate": "02/01/2024"
+  },
+  "metadata": {
+    "title": {
+      "default": "Senpai",
+      "template": "%s — Senpai"
+    },
+    "description": "Find your waifu",
+    "robots": {
+      "index": true,
+      "follow": true
+    },
+    "openGraph": {
+      "siteName": "Senpai",
+      "images": {
+        "url": "~/assets/images/default.png",
+        "width": 1200,
+        "height": 628
+      },
+      "type": "website"
+    },
+    "twitter": {
+      "handle": "@senpaiapp",
+      "site": "@senpaiapp",
+      "cardType": "summary_large_image"
+    }
+  }
+}

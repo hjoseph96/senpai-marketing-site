@@ -1,8 +1,7 @@
-import fs from 'fs';
-import yaml from 'js-yaml';
 import merge from 'lodash.merge';
 
 import type { MetaData } from '~/types';
+import siteConfig from '../config.json';
 
 export interface SiteConfig {
   name: string;
@@ -18,66 +17,8 @@ export interface MetaDataConfig extends Omit<MetaData, 'title'> {
     template: string;
   };
 }
-export interface I18NConfig {
-  language: string;
-  textDirection: string;
-  dateFormatter?: Intl.DateTimeFormat;
-}
-export interface AppBlogConfig {
-  isEnabled: boolean;
-  postsPerPage: number;
-  post: {
-    isEnabled: boolean;
-    permalink: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  list: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  category: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-  tag: {
-    isEnabled: boolean;
-    pathname: string;
-    robots: {
-      index: boolean;
-      follow: boolean;
-    };
-  };
-}
-export interface AnalyticsConfig {
-  vendors: {
-    googleAnalytics: {
-      id?: string;
-      partytown?: boolean;
-    };
-  };
-}
 
-const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
-  site?: SiteConfig;
-  metadata?: MetaDataConfig;
-  i18n?: I18NConfig;
-  apps?: {
-    blog?: AppBlogConfig;
-  };
-  ui?: unknown;
-  analytics?: unknown;
-};
+const config = siteConfig as any;
 
 const DEFAULT_SITE_NAME = 'Senpai';
 

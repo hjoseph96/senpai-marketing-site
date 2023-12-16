@@ -1,6 +1,7 @@
 # Senpai Marketing Site
 
 ## Installation
+
 - Copy .env.sample and create .env file. Fill mailchimp api key and list id
 
 ## 🧞 Commands
