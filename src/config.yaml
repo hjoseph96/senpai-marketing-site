@@ -12,7 +12,7 @@ metadata:
   title:
     default: Senpai
     template: '%s — Senpai'
-  description: 'Senpai LP'
+  description: 'Senpai is a dating app for anime lovers. Connect and find your match today.'
   robots:
     index: true
     follow: true
