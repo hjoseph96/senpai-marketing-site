@@ -12,7 +12,7 @@
       "default": "Senpai",
       "template": "%s — Senpai"
     },
-    "description": "Find your waifu",
+    "description": "Senpai is a dating app for anime lovers. Connect and find your match today.",
     "robots": {
       "index": true,
       "follow": true
