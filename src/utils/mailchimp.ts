@@ -19,7 +19,7 @@ export class MailChimp {
           'Content-Type': 'application/json',
         },
       };
-
+      
       await axios.post('https://us21.api.mailchimp.com/3.0/lists/' + mcListId + '/members', postData, axiosConfig);
       return true;
     } catch (e) {
