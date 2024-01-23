@@ -9,10 +9,10 @@
   },
   "metadata": {
     "title": {
-      "default": "Senpai",
+      "default": "Senpai | Dating App for Anime Lovers",
       "template": "%s — Senpai"
     },
-    "description": "Senpai is a dating app for anime lovers. Connect and find your match today.",
+    "description": "Senpai is a dating app for anime lovers. Break the ice using your shared passion. Connect and find your match today.",
     "robots": {
       "index": true,
       "follow": true
