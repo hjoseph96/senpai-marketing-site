@@ -1,7 +1,7 @@
 {
   "site": {
-    "name": "Senpai",
-    "site": "https://senpai.com",
+    "name": "Senpai | Dating App for Anime Lovers",
+    "site": "https://senpaiapp.com",
     "base": "/",
     "trailingSlash": false,
     "googleSiteVerificationId": "",
@@ -18,7 +18,7 @@
       "follow": true
     },
     "openGraph": {
-      "siteName": "Senpai",
+      "siteName": "Senpai | Dating App for Anime Lovers",
       "images": {
         "url": "~/assets/images/default.png",
         "width": 1200,
@@ -27,8 +27,8 @@
       "type": "website"
     },
     "twitter": {
-      "handle": "@senpaiapp",
-      "site": "@senpaiapp",
+      "handle": "@senpai_app",
+      "site": "@senpai_app",
       "cardType": "summary_large_image"
     }
   }
