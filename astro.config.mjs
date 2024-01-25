@@ -6,6 +6,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import { SITE } from './src/utils/config.ts';
 import netlify from '@astrojs/netlify/functions';
+import partytown from '@astrojs/partytown'
+
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -18,7 +20,14 @@ export default defineConfig({
   output: 'server',
   adapter: netlify(),
 
-  integrations: [tailwind()],
+  integrations: [
+    tailwind(),
+    partytown({
+			config: {
+			  forward: ["dataLayer.push"],
+			},
+		}),
+  ],
 
   vite: {
     resolve: {
