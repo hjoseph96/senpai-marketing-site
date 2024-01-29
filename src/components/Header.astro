@@ -46,7 +46,7 @@ let launched = months == days && days == hours && hours == 0;
             <div class="h1">Dating app for</div>
             <div class="h1 font-bold mt-2">anime lovers.</div>
             {
-              launched && (
+              !launched && (
                 <div>
                   <div class="flex items-center gap-8 mt-20 justify-center flex-wrap">
                     <img src="/assets/images/appstore.png" alt="appstore" />
@@ -59,7 +59,7 @@ let launched = months == days && days == hours && hours == 0;
               )
             }
             {
-              !launched && (
+              !!launched && (
                 <div>
                   <div class="flex items-center justify-between sm:mt-12 mt-8">
                     <div class="timer-container w-[110px] py-4 px-2 sm:w-[160px] sm:p-[16px]">
