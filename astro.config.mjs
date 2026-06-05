@@ -6,6 +6,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import { SITE } from './src/utils/config.ts';
 import netlify from '@astrojs/netlify/functions';
+import vercel from '@astrojs/vercel/serverless';
 import partytown from '@astrojs/partytown'
 
 
@@ -18,7 +19,7 @@ export default defineConfig({
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 
   output: 'server',
-  adapter: netlify(),
+  adapter: vercel(),
 
   integrations: [
     tailwind(),
