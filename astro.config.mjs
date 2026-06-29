@@ -5,8 +5,7 @@ import { defineConfig } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 import { SITE } from './src/utils/config.ts';
-import netlify from '@astrojs/netlify/functions';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 import partytown from '@astrojs/partytown'
 
 
